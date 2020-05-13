@@ -14,12 +14,10 @@ public class Exam {
 		changeArr(arr);
 		
 		int[][] exam2 = new int[][] {
-			{1,2,3,4,5},
-			{6,7,8,9,10},
-			{11,12,13,14,15},
-			{16,17,18,19,20},
-			{21,22,23,24,25},
-			{26,27,28,29,30}
+			{1,2},
+			{3,4,5,6,7},
+			{8,9,10},
+			{11}
 		};
 		System.out.println();
 		changeArr(exam2);
@@ -51,26 +49,33 @@ public class Exam {
 		addOneDArr(array,add);
 	}
 	public static void changeArr(int[][] arr) {
-		int[] swap1 = new int[arr[0].length];
-		int[] swap2 = new int[arr[0].length];
-		int[] start = new int[arr[0].length];
-		start = arr[arr.length-1];
-
-		for(int i=0;i<arr.length;i++) {
-			if(i!=arr.length-1) {
-				if(i==0) {
-					swap2 = arr[0];
-				}
-				swap1 = swap2;
-				swap2 = arr[i+1];
-				arr[i+1]=swap1;
-				
-			}
-			else {
-				arr[0]=start;
-			}
+		int[] end = new int[arr.length-1];
+		end = arr[arr.length-1];
+		for(int i=arr.length-1;i>0;i--) {
+			arr[i]=arr[i-1];
 		}
+		arr[0]=end;
 		
+//		int[] swap1 = new int[arr[0].length];
+//		int[] swap2 = new int[arr[0].length];
+//		int[] start = new int[arr[0].length];
+//		start = arr[arr.length-1];
+//
+//		for(int i=0;i<arr.length;i++) {
+//			if(i!=arr.length-1) {
+//				if(i==0) {
+//					swap2 = arr[0];
+//				}
+//				swap1 = swap2;
+//				swap2 = arr[i+1];
+//				arr[i+1]=swap1;
+//				
+//			}
+//			else {
+//				arr[0]=start;
+//			}
+//		}
+//		
 		for(int i=0;i<arr.length;i++) {
 			for(int j=0;j<arr[i].length;j++) {
 				System.out.print(arr[i][j]+" ");
