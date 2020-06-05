@@ -23,7 +23,7 @@ public class DataManager {
 			//DB연결 성공되면 진행, 실패시 catch 예외로 빠짐
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","hr","1234");
 			
-			psmt = conn.prepareStatement("select * from STUDY01");
+			psmt = conn.prepareStatement("select * from STUDY01 order by B");
 			
 			//insert update delete할때는 executeUpdate()실행
 			//select는 executeQuery() 실행
@@ -83,6 +83,22 @@ public class DataManager {
 		catch(Exception e){
 			e.printStackTrace();
 		}
+		finally {
+			try {
+				
+				if(psmt!=null) {
+					psmt.close();
+				}
+				if(conn!=null) {
+					psmt.close();
+				}
+			}
+			catch(Exception e) {
+				
+				
+			}
+			
+		}
 		
 	}
 	
@@ -106,6 +122,22 @@ public class DataManager {
 		catch(Exception e){
 			e.printStackTrace();
 		}
+		finally {
+			try {
+				
+				if(psmt!=null) {
+					psmt.close();
+				}
+				if(conn!=null) {
+					psmt.close();
+				}
+			}
+			catch(Exception e) {
+				
+				
+			}
+			
+		}
 	}
 	public static void update() {
 		Connection conn = null; // DB연결을 유지하는 객체
@@ -126,6 +158,22 @@ public class DataManager {
 		}
 		catch(Exception e){
 			e.printStackTrace();
+		}
+		finally {
+			try {
+				
+				if(psmt!=null) {
+					psmt.close();
+				}
+				if(conn!=null) {
+					psmt.close();
+				}
+			}
+			catch(Exception e) {
+				
+				
+			}
+			
 		}
 	}
 }
