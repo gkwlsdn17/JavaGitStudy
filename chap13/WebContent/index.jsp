@@ -36,15 +36,16 @@
 	<div class="row">
 		<div class="col">
 			<table class="table table-bordered table-hover">
-			<tr>
-				<th>번호</th>
-				<th>작성자</th>
-				<th>이메일</th>
-				<th>제목</th>
-				<th>비밀번호</th>
-				<th>작성일자</th>
-				<th>조회수</th>
-				
+				<tr>
+					<th>번호</th>
+					<th>작성자</th>
+					<th>이메일</th>
+					<th>제목</th>
+					<th>비밀번호</th>
+					<th>작성일자</th>
+					<th>조회수</th>
+				</tr>	
+			
 				<%
 					for(BoardDataBean temp: list){
 						out.print("<tr onclick ='row("+temp.getNum()+")'>");
